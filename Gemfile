@@ -59,3 +59,4 @@ source 'https://rails-assets.org' do
 end
 
 gem 'devise'
+gem 'carrierwave', '~> 1.0'

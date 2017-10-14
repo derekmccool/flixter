@@ -58,5 +58,16 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
+#For user creation
 gem 'devise'
+#Picture and Video Uploading
 gem 'carrierwave', '~> 1.0'
+
+#image resizing
+gem 'mini_magick'
+
+#added security
+gem 'figaro'
+
+#Fog gem
+gem 'fog-aws'

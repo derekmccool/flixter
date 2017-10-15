@@ -69,5 +69,6 @@ gem 'mini_magick'
 #added security
 gem 'figaro'
 
-#Fog gem
+#For Amazon Web Services
 gem 'fog-aws'
+gem 'carrierwave-aws'

@@ -72,3 +72,4 @@ gem 'figaro'
 #For Amazon Web Services
 gem 'fog-aws'
 gem 'carrierwave-aws'
+gem 'stripe'

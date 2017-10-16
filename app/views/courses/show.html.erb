@@ -15,6 +15,32 @@
         <br />
         <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large' %>
       <% end %>
+
+      <br />
+      <br />
+
+      <!-- Checks to see if a user is logged in, if so it will show that they can enroll or that they are enrolled, if not gives a message to sign in to enroll.
+      If the course is free it will sign up when pressing the enrollment button, if it is premium the Stripe verication will come up. -->
+      <% if current_user %>
+        <% if current_user.enrolled_in?(@course) %>
+          <h3 class="badge badge-info">You Are Enrolled!</h3>
+        <% else %>
+          <% if @course.free? %>
+            <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
+          <% else %>
+            <%= form_tag course_enrollments_path(@course) do %>
+              <script src="https://checkout.stripe.com/checkout.js" class ="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-email="<%= current_user.email %>"
+                      data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
+                      data-amount="<%= (@course.cost * 100).to_i %>"
+                      data-locale="auto"></script>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h3 class="badge badge-info">Sign In to Enroll!</h3>
+      <% end %>
     </div>
 
     <div class="col-sm-8-col-12">

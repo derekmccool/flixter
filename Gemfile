@@ -27,6 +27,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+#jquery ui
+gem 'jquery-ui-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -72,4 +75,9 @@ gem 'figaro'
 #For Amazon Web Services
 gem 'fog-aws'
 gem 'carrierwave-aws'
+
+#credit card payments
 gem 'stripe'
+
+#Ranked order listing
+gem 'ranked-model'

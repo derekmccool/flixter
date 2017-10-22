@@ -81,3 +81,6 @@ gem 'stripe'
 
 #Ranked order listing
 gem 'ranked-model'
+
+#fonts
+gem 'font-awesome-rails'

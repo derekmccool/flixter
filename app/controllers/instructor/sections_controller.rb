@@ -6,7 +6,7 @@ class Instructor::SectionsController < ApplicationController
 
   def update
     current_section.update_attributes(section_params)
-    redirect_to instructor_course_path(current_course)
+    render plain: 'ok!'
   end
 
   def create
@@ -29,7 +29,7 @@ class Instructor::SectionsController < ApplicationController
   end
 
   def current_section
-    @current_section ||= Course.find(params[:section_id])
+    @current_section ||= Section.find(params[:id])
   end
 
   helper_method :current_course

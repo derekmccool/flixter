@@ -63,6 +63,14 @@ body {
 
 .btn-success{
   background-color: grey;
+  color: white;
+  border-color: grey;
+}
+
+.btn-success:hover {
+  background-color: #5926E0;
+  border-color: white;
+
 }
 
 .booyah-box {
